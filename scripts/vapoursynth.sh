@@ -31,7 +31,7 @@ set -a; source build.env; source ver.sh; set +a
 
 
 # Force 11 deployment target for all homebrew formulas
-find $(brew --repository)/Library/Taps -type f -iname *rb -exec sed -i "" $'s/def install/def install\\\n    ENV["MACOSX_DEPLOYMENT_TARGET"] = "11"\\\n/' {} \;          
+find $(brew --repository)/Library/Taps -type f -iname *rb -exec sed -i "" $'s/def install/def install\\\n    ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.15"\\\n/' {} \;          
 brew install vapoursynth
 rm `brew --prefix vapoursynth`/lib/pkgconfig/*.pc
 cp vapoursynth*.pc `brew --prefix vapoursynth`/lib/pkgconfig

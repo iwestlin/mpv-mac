@@ -16,7 +16,7 @@ set -a; source build.env; source ver.sh; set +a
 #install -vm644 Package/Latest/MoltenVK/dynamic/dylib/macOS/MoltenVK_icd.json "$DIR/opt/share/vulkan/icd.d"
 
 # Force 11 deployment target for all homebrew formulas
-find $(brew --repository)/Library/Taps -type f -iname *rb -exec sed -i "" $'s/def install/def install\\\n    ENV["MACOSX_DEPLOYMENT_TARGET"] = "11"\\\n/' {} \;
+find $(brew --repository)/Library/Taps -type f -iname *rb -exec sed -i "" $'s/def install/def install\\\n    ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.15"\\\n/' {} \;
           
 brew install molten-vk
 cd $DIR
