@@ -5,7 +5,7 @@ cd "$(dirname "$0")" && cd ..
 set -a; source build.env; source ver.sh; set +a
 
 cd $PACKAGES
-git clone https://github.com/mpv-player/mpv.git
+git clone https://github.com/mpv-player/mpv.git --depth=1
 cd mpv
 curl -OL https://github.com/mpv-player/mpv/pull/15329.patch
 patch -p1 -i 15329.patch
