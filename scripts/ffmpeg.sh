@@ -8,7 +8,7 @@ set -a; source build.env; source ver.sh; set +a
 # depends on: libxcb[xcb-proto libXau(xorgproto(util-macros)), libXdmcp(xorgproto)]
 cp $DIR/intl.pc $WORKSPACE/lib/pkgconfig
 cd $PACKAGES
-git clone https://github.com/FFmpeg/FFmpeg.git
+git clone https://github.com/FFmpeg/FFmpeg.git --depth=1
 cd FFmpeg
 
 # fix checks for small buffers
